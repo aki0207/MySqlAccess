@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN" "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <classPathEntry
+        location="/Users/nagami/.m2/repository/mysql/mysql-connector-java/8.0.17/mysql-connector-java-8.0.17.jar" />
+    <context id="context1">
+ 
+<!--     JDBCの設定です (1) -->
+        <jdbcConnection
+            driverClass="com.mysql.jdbc.Driver"
+            connectionURL="jdbc:mysql://localhost:3306/test_app"
+            userId="root"
+            password="hogehoge"
+        />
+ 
+<!--     自動生成するエンティティの設定です (2) -->
+        <javaModelGenerator
+            targetPackage="com.example.entity"
+            targetProject="src/main/java/"
+        />
+        <sqlMapGenerator
+            targetPackage="com.example.entity"
+            targetProject="src/main/java/"
+        />
+        <javaClientGenerator
+            targetPackage="com.example.entity"
+            targetProject="src/main/java/"
+            type="XMLMAPPER"
+        />
+ 
+<!--     生成対象のテーブルです（3) -->
+        <table schema="test_app" tableName="t_user" />
+    </context>
+</generatorConfiguration>
